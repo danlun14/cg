@@ -1,0 +1,5 @@
+add_subdirectory(basic)
+add_subdirectory(cipher)
+add_subdirectory(main)
+add_subdirectory(BigInt)
+add_subdirectory(lab2)

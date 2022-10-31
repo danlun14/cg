@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcipher.a CMakeFiles/cipher.dir/cipher/cipher.cpp.o
+/usr/bin/ranlib libcipher.a

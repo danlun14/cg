@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/main.dir/main/main.cpp.o -o /home/danila/std/pi/bin/main  ../basic/libbasic.a ../BigInt/libBigInt.a 
