@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsign.a CMakeFiles/sign.dir/sign/sign.cpp.o
+/usr/bin/ranlib libsign.a

@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1156/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1186/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1156/bin/cmake -E rm -f
+RM = /snap/cmake/1186/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/1156/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1186/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -181,6 +181,45 @@ lab2/fast:
 	$(MAKE) $(MAKESILENT) -f src/lab2/CMakeFiles/lab2.dir/build.make src/lab2/CMakeFiles/lab2.dir/build
 .PHONY : lab2/fast
 
+#=============================================================================
+# Target rules for targets named lab3
+
+# Build rule for target.
+lab3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab3
+.PHONY : lab3
+
+# fast build rule for target.
+lab3/fast:
+	$(MAKE) $(MAKESILENT) -f src/lab3/CMakeFiles/lab3.dir/build.make src/lab3/CMakeFiles/lab3.dir/build
+.PHONY : lab3/fast
+
+#=============================================================================
+# Target rules for targets named sha256
+
+# Build rule for target.
+sha256: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sha256
+.PHONY : sha256
+
+# fast build rule for target.
+sha256/fast:
+	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/build
+.PHONY : sha256/fast
+
+#=============================================================================
+# Target rules for targets named sign
+
+# Build rule for target.
+sign: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sign
+.PHONY : sign
+
+# fast build rule for target.
+sign/fast:
+	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/build
+.PHONY : sign/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -193,7 +232,10 @@ help:
 	@echo "... basic"
 	@echo "... cipher"
 	@echo "... lab2"
+	@echo "... lab3"
 	@echo "... main"
+	@echo "... sha256"
+	@echo "... sign"
 .PHONY : help
 
 

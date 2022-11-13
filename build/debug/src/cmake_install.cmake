@@ -49,6 +49,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/danila/std/pi/build/debug/src/main/cmake_install.cmake")
   include("/home/danila/std/pi/build/debug/src/BigInt/cmake_install.cmake")
   include("/home/danila/std/pi/build/debug/src/lab2/cmake_install.cmake")
+  include("/home/danila/std/pi/build/debug/src/lab3/cmake_install.cmake")
+  include("/home/danila/std/pi/build/debug/src/sha256/cmake_install.cmake")
+  include("/home/danila/std/pi/build/debug/src/sign/cmake_install.cmake")
 
 endif()
 

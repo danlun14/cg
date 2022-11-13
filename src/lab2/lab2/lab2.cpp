@@ -5,10 +5,10 @@
 int main(/*int argc, char *argv[]*/)
 {
     /*
-        long long c1, d1;
-        long long c2, d2;
+        long long  c1, d1;
+        long long  c2, d2;
 
-        long long P;
+        long long  P;
         P = basic::simpleSafeNumber(100);
         std::cout << "P: " << P << std::endl;
 
@@ -17,14 +17,14 @@ int main(/*int argc, char *argv[]*/)
         cipher::init::shamira(c2, d2, P, 100);
         std::cout << "c: " << c2 << " d:" << d2 << std::endl;
 
-        long long m = rand() % (P - 1) + 1;
-        long long x = cipher::encode::shamira(m, c1, c2, P);
+        long long  m = rand() % (P - 1) + 1;
+        long long  x = cipher::encode::shamira(m, c1, c2, P);
         std::cout << "message: " << m << " encode: " << x << std::endl;
 
         std::cout << "message: " << x << " decode: " << cipher::decode::shamira(x, d1, d2, P) << '\n'
                   << std::endl;
 
-        long long a = 0, b = 0;
+        long long  a = 0, b = 0;
 
         P = basic::simpleSafeNumber(100);
         std::cout << "P - " << P << std::endl;
@@ -38,9 +38,9 @@ int main(/*int argc, char *argv[]*/)
             x = basic::simpleSafeNumber(100);
         }
         std::cout << "x - " << x << std::endl;
-        long long g = basic::getG(P);
+        long long  g = basic::getG(P);
         m = rand() % (P - 1) + 1;
-        long long y = basic::powmod(g, x, P);
+        long long  y = basic::powmod(g, x, P);
 
         std::cout << P << ' ' << x << ' ' << g << ' ' << a << ' ' << b << std::endl;
         cipher::encode::elgamal(m, P, g, a, b, y);

@@ -26,8 +26,8 @@ namespace cipher
             N = P * Q;
             long long fi = (P - 1) * (Q - 1);
 
-            C = basic::coPrime(fi, fi);
-            D = basic::reverse(fi, C);
+            D = basic::coPrime(fi, fi);
+            C = basic::reverse(fi, D);
         }
     }
 

@@ -33,7 +33,6 @@ namespace basic
 
     long long powmod(long long a, long long x, long long p)
     {
-        BigInt ac = a;
         long long result = 1;
         long long x0 = 1;
         long long bitcounter = x;
@@ -43,13 +42,13 @@ namespace basic
             amod = 1;
             if (bitcounter % 2 == 1)
             {
-                amod = (ac % p).to_long_long();
+                amod = a % p;
             }
             result *= amod;
             result %= p;
 
             bitcounter /= 2;
-            ac *= ac;
+            a = (a * a) % p;
             x0 *= 2;
         }
         return result;

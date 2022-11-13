@@ -45,10 +45,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1156/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1186/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1156/bin/cmake -E rm -f
+RM = /snap/cmake/1186/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -83,6 +83,9 @@ src/all: src/cipher/all
 src/all: src/main/all
 src/all: src/BigInt/all
 src/all: src/lab2/all
+src/all: src/lab3/all
+src/all: src/sha256/all
+src/all: src/sign/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -91,6 +94,9 @@ src/preinstall: src/cipher/preinstall
 src/preinstall: src/main/preinstall
 src/preinstall: src/BigInt/preinstall
 src/preinstall: src/lab2/preinstall
+src/preinstall: src/lab3/preinstall
+src/preinstall: src/sha256/preinstall
+src/preinstall: src/sign/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -99,6 +105,9 @@ src/clean: src/cipher/clean
 src/clean: src/main/clean
 src/clean: src/BigInt/clean
 src/clean: src/lab2/clean
+src/clean: src/lab3/clean
+src/clean: src/sha256/clean
+src/clean: src/sign/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -162,6 +171,21 @@ src/lab2/clean: src/lab2/CMakeFiles/lab2.dir/clean
 .PHONY : src/lab2/clean
 
 #=============================================================================
+# Directory level rules for directory src/lab3
+
+# Recursive "all" directory target.
+src/lab3/all: src/lab3/CMakeFiles/lab3.dir/all
+.PHONY : src/lab3/all
+
+# Recursive "preinstall" directory target.
+src/lab3/preinstall:
+.PHONY : src/lab3/preinstall
+
+# Recursive "clean" directory target.
+src/lab3/clean: src/lab3/CMakeFiles/lab3.dir/clean
+.PHONY : src/lab3/clean
+
+#=============================================================================
 # Directory level rules for directory src/main
 
 # Recursive "all" directory target.
@@ -175,6 +199,36 @@ src/main/preinstall:
 # Recursive "clean" directory target.
 src/main/clean: src/main/CMakeFiles/main.dir/clean
 .PHONY : src/main/clean
+
+#=============================================================================
+# Directory level rules for directory src/sha256
+
+# Recursive "all" directory target.
+src/sha256/all: src/sha256/CMakeFiles/sha256.dir/all
+.PHONY : src/sha256/all
+
+# Recursive "preinstall" directory target.
+src/sha256/preinstall:
+.PHONY : src/sha256/preinstall
+
+# Recursive "clean" directory target.
+src/sha256/clean: src/sha256/CMakeFiles/sha256.dir/clean
+.PHONY : src/sha256/clean
+
+#=============================================================================
+# Directory level rules for directory src/sign
+
+# Recursive "all" directory target.
+src/sign/all: src/sign/CMakeFiles/sign.dir/all
+.PHONY : src/sign/all
+
+# Recursive "preinstall" directory target.
+src/sign/preinstall:
+.PHONY : src/sign/preinstall
+
+# Recursive "clean" directory target.
+src/sign/clean: src/sign/CMakeFiles/sign.dir/clean
+.PHONY : src/sign/clean
 
 #=============================================================================
 # Target rules for target src/basic/CMakeFiles/basic.dir
@@ -237,7 +291,7 @@ src/main/CMakeFiles/main.dir/all: src/basic/CMakeFiles/basic.dir/all
 src/main/CMakeFiles/main.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/main.dir/build.make src/main/CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/main.dir/build.make src/main/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=9,10 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=11,12 "Built target main"
 .PHONY : src/main/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -309,6 +363,91 @@ lab2: src/lab2/CMakeFiles/lab2.dir/rule
 src/lab2/CMakeFiles/lab2.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/lab2/CMakeFiles/lab2.dir/build.make src/lab2/CMakeFiles/lab2.dir/clean
 .PHONY : src/lab2/CMakeFiles/lab2.dir/clean
+
+#=============================================================================
+# Target rules for target src/lab3/CMakeFiles/lab3.dir
+
+# All Build rule for target.
+src/lab3/CMakeFiles/lab3.dir/all: src/basic/CMakeFiles/basic.dir/all
+src/lab3/CMakeFiles/lab3.dir/all: src/cipher/CMakeFiles/cipher.dir/all
+src/lab3/CMakeFiles/lab3.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
+src/lab3/CMakeFiles/lab3.dir/all: src/sha256/CMakeFiles/sha256.dir/all
+src/lab3/CMakeFiles/lab3.dir/all: src/sign/CMakeFiles/sign.dir/all
+	$(MAKE) $(MAKESILENT) -f src/lab3/CMakeFiles/lab3.dir/build.make src/lab3/CMakeFiles/lab3.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/lab3/CMakeFiles/lab3.dir/build.make src/lab3/CMakeFiles/lab3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=9,10 "Built target lab3"
+.PHONY : src/lab3/CMakeFiles/lab3.dir/all
+
+# Build rule for subdir invocation for target.
+src/lab3/CMakeFiles/lab3.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/lab3/CMakeFiles/lab3.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 0
+.PHONY : src/lab3/CMakeFiles/lab3.dir/rule
+
+# Convenience name for target.
+lab3: src/lab3/CMakeFiles/lab3.dir/rule
+.PHONY : lab3
+
+# clean rule for target.
+src/lab3/CMakeFiles/lab3.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/lab3/CMakeFiles/lab3.dir/build.make src/lab3/CMakeFiles/lab3.dir/clean
+.PHONY : src/lab3/CMakeFiles/lab3.dir/clean
+
+#=============================================================================
+# Target rules for target src/sha256/CMakeFiles/sha256.dir
+
+# All Build rule for target.
+src/sha256/CMakeFiles/sha256.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=13,14 "Built target sha256"
+.PHONY : src/sha256/CMakeFiles/sha256.dir/all
+
+# Build rule for subdir invocation for target.
+src/sha256/CMakeFiles/sha256.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/sha256/CMakeFiles/sha256.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 0
+.PHONY : src/sha256/CMakeFiles/sha256.dir/rule
+
+# Convenience name for target.
+sha256: src/sha256/CMakeFiles/sha256.dir/rule
+.PHONY : sha256
+
+# clean rule for target.
+src/sha256/CMakeFiles/sha256.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/clean
+.PHONY : src/sha256/CMakeFiles/sha256.dir/clean
+
+#=============================================================================
+# Target rules for target src/sign/CMakeFiles/sign.dir
+
+# All Build rule for target.
+src/sign/CMakeFiles/sign.dir/all: src/basic/CMakeFiles/basic.dir/all
+src/sign/CMakeFiles/sign.dir/all: src/cipher/CMakeFiles/cipher.dir/all
+src/sign/CMakeFiles/sign.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
+src/sign/CMakeFiles/sign.dir/all: src/sha256/CMakeFiles/sha256.dir/all
+	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=15,16 "Built target sign"
+.PHONY : src/sign/CMakeFiles/sign.dir/all
+
+# Build rule for subdir invocation for target.
+src/sign/CMakeFiles/sign.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/sign/CMakeFiles/sign.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 0
+.PHONY : src/sign/CMakeFiles/sign.dir/rule
+
+# Convenience name for target.
+sign: src/sign/CMakeFiles/sign.dir/rule
+.PHONY : sign
+
+# clean rule for target.
+src/sign/CMakeFiles/sign.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/clean
+.PHONY : src/sign/CMakeFiles/sign.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

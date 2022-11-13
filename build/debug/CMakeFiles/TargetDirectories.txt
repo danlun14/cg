@@ -17,3 +17,12 @@
 /home/danila/std/pi/build/debug/src/lab2/CMakeFiles/lab2.dir
 /home/danila/std/pi/build/debug/src/lab2/CMakeFiles/edit_cache.dir
 /home/danila/std/pi/build/debug/src/lab2/CMakeFiles/rebuild_cache.dir
+/home/danila/std/pi/build/debug/src/lab3/CMakeFiles/lab3.dir
+/home/danila/std/pi/build/debug/src/lab3/CMakeFiles/edit_cache.dir
+/home/danila/std/pi/build/debug/src/lab3/CMakeFiles/rebuild_cache.dir
+/home/danila/std/pi/build/debug/src/sha256/CMakeFiles/sha256.dir
+/home/danila/std/pi/build/debug/src/sha256/CMakeFiles/edit_cache.dir
+/home/danila/std/pi/build/debug/src/sha256/CMakeFiles/rebuild_cache.dir
+/home/danila/std/pi/build/debug/src/sign/CMakeFiles/sign.dir
+/home/danila/std/pi/build/debug/src/sign/CMakeFiles/edit_cache.dir
+/home/danila/std/pi/build/debug/src/sign/CMakeFiles/rebuild_cache.dir

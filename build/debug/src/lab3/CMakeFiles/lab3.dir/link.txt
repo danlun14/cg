@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/lab3.dir/lab3/lab3.cpp.o -o /home/danila/std/pi/bin/lab3  ../cipher/libcipher.a ../BigInt/libBigInt.a ../sign/libsign.a ../cipher/libcipher.a ../basic/libbasic.a ../BigInt/libBigInt.a ../sha256/libsha256.a 
