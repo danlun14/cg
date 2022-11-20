@@ -7,6 +7,8 @@ namespace cipher
         void shamira(long long &C, long long &D, long long P, long long up);
 
         void RSA(long long P, long long Q, long long &C, long long &D, long long &N);
+
+        void elgamal(long long P, long long x, long long &g, long long &y);
     }
 
     namespace encode

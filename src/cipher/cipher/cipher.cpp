@@ -29,6 +29,11 @@ namespace cipher
             D = basic::coPrime(fi, fi);
             C = basic::reverse(fi, D);
         }
+        void elgamal(long long P, long long x, long long &g, long long &y)
+        {
+            g = basic::getG(P);
+            y = basic::powmod(g, x, P);
+        }
     }
 
     namespace encode
