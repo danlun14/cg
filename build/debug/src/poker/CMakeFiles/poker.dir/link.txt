@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/poker.dir/poker/poker.cpp.o -o /home/danila/std/pi/bin/poker  ../basic/libbasic.a ../cipher/libcipher.a ../basic/libbasic.a ../BigInt/libBigInt.a 

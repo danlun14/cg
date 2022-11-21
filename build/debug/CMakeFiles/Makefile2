@@ -86,6 +86,7 @@ src/all: src/lab2/all
 src/all: src/lab3/all
 src/all: src/sha256/all
 src/all: src/sign/all
+src/all: src/poker/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -97,6 +98,7 @@ src/preinstall: src/lab2/preinstall
 src/preinstall: src/lab3/preinstall
 src/preinstall: src/sha256/preinstall
 src/preinstall: src/sign/preinstall
+src/preinstall: src/poker/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -108,6 +110,7 @@ src/clean: src/lab2/clean
 src/clean: src/lab3/clean
 src/clean: src/sha256/clean
 src/clean: src/sign/clean
+src/clean: src/poker/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -199,6 +202,21 @@ src/main/preinstall:
 # Recursive "clean" directory target.
 src/main/clean: src/main/CMakeFiles/main.dir/clean
 .PHONY : src/main/clean
+
+#=============================================================================
+# Directory level rules for directory src/poker
+
+# Recursive "all" directory target.
+src/poker/all: src/poker/CMakeFiles/poker.dir/all
+.PHONY : src/poker/all
+
+# Recursive "preinstall" directory target.
+src/poker/preinstall:
+.PHONY : src/poker/preinstall
+
+# Recursive "clean" directory target.
+src/poker/clean: src/poker/CMakeFiles/poker.dir/clean
+.PHONY : src/poker/clean
 
 #=============================================================================
 # Directory level rules for directory src/sha256
@@ -401,7 +419,7 @@ src/lab3/CMakeFiles/lab3.dir/clean:
 src/sha256/CMakeFiles/sha256.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=13,14 "Built target sha256"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=15,16 "Built target sha256"
 .PHONY : src/sha256/CMakeFiles/sha256.dir/all
 
 # Build rule for subdir invocation for target.
@@ -430,7 +448,7 @@ src/sign/CMakeFiles/sign.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
 src/sign/CMakeFiles/sign.dir/all: src/sha256/CMakeFiles/sha256.dir/all
 	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=15,16 "Built target sign"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=17,18 "Built target sign"
 .PHONY : src/sign/CMakeFiles/sign.dir/all
 
 # Build rule for subdir invocation for target.
@@ -448,6 +466,34 @@ sign: src/sign/CMakeFiles/sign.dir/rule
 src/sign/CMakeFiles/sign.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/clean
 .PHONY : src/sign/CMakeFiles/sign.dir/clean
+
+#=============================================================================
+# Target rules for target src/poker/CMakeFiles/poker.dir
+
+# All Build rule for target.
+src/poker/CMakeFiles/poker.dir/all: src/basic/CMakeFiles/basic.dir/all
+src/poker/CMakeFiles/poker.dir/all: src/cipher/CMakeFiles/cipher.dir/all
+src/poker/CMakeFiles/poker.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
+	$(MAKE) $(MAKESILENT) -f src/poker/CMakeFiles/poker.dir/build.make src/poker/CMakeFiles/poker.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/poker/CMakeFiles/poker.dir/build.make src/poker/CMakeFiles/poker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=13,14 "Built target poker"
+.PHONY : src/poker/CMakeFiles/poker.dir/all
+
+# Build rule for subdir invocation for target.
+src/poker/CMakeFiles/poker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/poker/CMakeFiles/poker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 0
+.PHONY : src/poker/CMakeFiles/poker.dir/rule
+
+# Convenience name for target.
+poker: src/poker/CMakeFiles/poker.dir/rule
+.PHONY : poker
+
+# clean rule for target.
+src/poker/CMakeFiles/poker.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/poker/CMakeFiles/poker.dir/build.make src/poker/CMakeFiles/poker.dir/clean
+.PHONY : src/poker/CMakeFiles/poker.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

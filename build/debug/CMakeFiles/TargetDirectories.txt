@@ -26,3 +26,6 @@
 /home/danila/std/pi/build/debug/src/sign/CMakeFiles/sign.dir
 /home/danila/std/pi/build/debug/src/sign/CMakeFiles/edit_cache.dir
 /home/danila/std/pi/build/debug/src/sign/CMakeFiles/rebuild_cache.dir
+/home/danila/std/pi/build/debug/src/poker/CMakeFiles/poker.dir
+/home/danila/std/pi/build/debug/src/poker/CMakeFiles/edit_cache.dir
+/home/danila/std/pi/build/debug/src/poker/CMakeFiles/rebuild_cache.dir

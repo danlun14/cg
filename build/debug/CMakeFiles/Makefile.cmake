@@ -19,6 +19,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/danila/std/pi/src/lab2/CMakeLists.txt"
   "/home/danila/std/pi/src/lab3/CMakeLists.txt"
   "/home/danila/std/pi/src/main/CMakeLists.txt"
+  "/home/danila/std/pi/src/poker/CMakeLists.txt"
   "/home/danila/std/pi/src/sha256/CMakeLists.txt"
   "/home/danila/std/pi/src/sign/CMakeLists.txt"
   "/snap/cmake/1204/share/cmake-3.25/Modules/CMakeCInformation.cmake"
@@ -60,6 +61,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/lab3/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/sha256/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/sign/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/poker/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -72,4 +74,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/lab3/CMakeFiles/lab3.dir/DependInfo.cmake"
   "src/sha256/CMakeFiles/sha256.dir/DependInfo.cmake"
   "src/sign/CMakeFiles/sign.dir/DependInfo.cmake"
+  "src/poker/CMakeFiles/poker.dir/DependInfo.cmake"
   )

@@ -220,6 +220,19 @@ sign/fast:
 	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/build
 .PHONY : sign/fast
 
+#=============================================================================
+# Target rules for targets named poker
+
+# Build rule for target.
+poker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 poker
+.PHONY : poker
+
+# fast build rule for target.
+poker/fast:
+	$(MAKE) $(MAKESILENT) -f src/poker/CMakeFiles/poker.dir/build.make src/poker/CMakeFiles/poker.dir/build
+.PHONY : poker/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,6 +247,7 @@ help:
 	@echo "... lab2"
 	@echo "... lab3"
 	@echo "... main"
+	@echo "... poker"
 	@echo "... sha256"
 	@echo "... sign"
 .PHONY : help

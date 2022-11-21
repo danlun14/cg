@@ -13,7 +13,7 @@ namespace cipher
             {
                 c = basic::getRand(gen, 2, up);
                 d = basic::getRand(gen, 2, up);
-                if ((c * d) % (P - 1) == 1)
+                if (((c * d) % (P - 1) == 1) && (c != d))
                 {
                     C = c;
                     D = d;
