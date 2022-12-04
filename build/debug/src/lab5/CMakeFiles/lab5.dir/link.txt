@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/lab5.dir/lab5/lab5.cpp.o -o /home/danila/std/pi/bin/lab5  ../voting/libvoting.a 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvoting.a CMakeFiles/voting.dir/voting/voting.cpp.o
+/usr/bin/ranlib libvoting.a

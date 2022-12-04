@@ -53,6 +53,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/danila/std/pi/build/debug/src/sha256/cmake_install.cmake")
   include("/home/danila/std/pi/build/debug/src/sign/cmake_install.cmake")
   include("/home/danila/std/pi/build/debug/src/poker/cmake_install.cmake")
+  include("/home/danila/std/pi/build/debug/src/voting/cmake_install.cmake")
+  include("/home/danila/std/pi/build/debug/src/lab5/cmake_install.cmake")
 
 endif()
 

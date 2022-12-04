@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/danila/std/pi/build/debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/snap/cmake/1156/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1210/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -233,6 +233,32 @@ poker/fast:
 	$(MAKE) $(MAKESILENT) -f src/poker/CMakeFiles/poker.dir/build.make src/poker/CMakeFiles/poker.dir/build
 .PHONY : poker/fast
 
+#=============================================================================
+# Target rules for targets named voting
+
+# Build rule for target.
+voting: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 voting
+.PHONY : voting
+
+# fast build rule for target.
+voting/fast:
+	$(MAKE) $(MAKESILENT) -f src/voting/CMakeFiles/voting.dir/build.make src/voting/CMakeFiles/voting.dir/build
+.PHONY : voting/fast
+
+#=============================================================================
+# Target rules for targets named lab5
+
+# Build rule for target.
+lab5: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab5
+.PHONY : lab5
+
+# fast build rule for target.
+lab5/fast:
+	$(MAKE) $(MAKESILENT) -f src/lab5/CMakeFiles/lab5.dir/build.make src/lab5/CMakeFiles/lab5.dir/build
+.PHONY : lab5/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,10 +272,12 @@ help:
 	@echo "... cipher"
 	@echo "... lab2"
 	@echo "... lab3"
+	@echo "... lab5"
 	@echo "... main"
 	@echo "... poker"
 	@echo "... sha256"
 	@echo "... sign"
+	@echo "... voting"
 .PHONY : help
 
 

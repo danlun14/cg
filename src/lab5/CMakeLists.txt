@@ -15,9 +15,7 @@ target_sources(
 target_link_libraries(
   ${lab5_target}
   PRIVATE
-    cipher
-    BigInt
-    sign
+    voting
 )
 
 target_include_directories(
