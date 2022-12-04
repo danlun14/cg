@@ -1,5 +1,7 @@
 #include <iostream>
 #include <sign.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+using namespace boost::multiprecision;
 
 int main()
 {
@@ -13,7 +15,7 @@ int main()
     long long P = 0, g = 0, y = 0;
     // sign::elgamal(ifile, P, g, y);
 
-    long long p = 0, q = 0, a = 0, y2 = 0;
+    cpp_int p = 0, q = 0, a = 0, y2 = 0;
     sign::gost(ifile, p, q, a, y2);
 
     std::cout << "Enter filename to check:\n";

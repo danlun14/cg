@@ -1,4 +1,14 @@
 #include <sign.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/miller_rabin.hpp>
+#include <boost/random/mersenne_twister.hpp>
+#include <boost/integer/extended_euclidean.hpp>
+#include <boost/multiprecision/integer.hpp>
+#include <boost/integer/mod_inverse.hpp>
+
+using namespace boost::multiprecision;
+using namespace boost::random;
+using boost::multiprecision::powm;
 
 std::string readFile(const std::string &fileName)
 {
@@ -25,6 +35,28 @@ long long hashFile(const std::string &filename, const long long del)
     // std::cout << filehash << '\n';
     filehash.erase(16, filehash.size() - 16);
     long long h = std::strtoll(filehash.c_str(), 0, 16);
+    return h % del;
+}
+
+cpp_int hashFile(const std::string &filename, cpp_int del)
+{
+    std::string filedata = readFile(filename);
+
+    std::string filehash = SHA256(filedata.c_str());
+
+    cpp_int h;
+    int startpos = 0;
+    while (true)
+
+    {
+        h += strtoull(filehash.substr(startpos, 16).c_str(), 0, 16);
+        startpos += 16;
+        if (startpos == (256 / 4))
+        {
+            break;
+        }
+        h <<= 64;
+    }
     return h % del;
 }
 
@@ -89,43 +121,71 @@ namespace sign
         std::string result = outdata.str();
         fillFile("elgamal.txt", result);
     }
-    void gost(const std::string &filename, long long &p, long long &q, long long &a, long long &y)
+
+    cpp_int powM(cpp_int value, cpp_int exponent, cpp_int modulus)
     {
-        long long pup = (static_cast<long long>(1) << 31) - 1;
-        std::cout << pup << '\n';
-        long long qup = (static_cast<long long>(1) << 16) - 1;
-        std::cout << qup << '\n';
-        q = basic::simpleSafeNumber(qup);
-        long long qcount = (pup / 2) / q;
-        long long qcur = q * (qcount + 1);
-        while (basic::testFerma(qcur + 1, 500) == false)
+        value %= modulus;
+        cpp_int result = 1;
+        while (exponent > 0)
         {
-            qcur += q;
+            if (exponent & 1)
+                result = (result * value) % modulus;
+            value = (value * value) % modulus;
+            exponent >>= 1;
         }
-        p = qcur + 1;
+        return result;
+    }
 
-        std::cout << "p - " << p << '\n';
-        std::cout << "q - " << q << '\n';
-        long long b = (p - 1) / q;
-        a = -1;
-        long long g = 0;
-        while (a < 0)
-        {
-            g = rand() % (p - 1);
-            a = basic::powmod(g, b, p);
-        }
-        std::cout << "a - " << a << ' ' << basic::powmod(a, q, p) << '\n';
-        long long h = hashFile(filename, q);
-        long long x = basic::simpleSafeNumber(q);
-        y = basic::powmod(a, x, p);
+    void gost(const std::string &filename, cpp_int &p, cpp_int &q, cpp_int &a, cpp_int &y)
+    {
+        cpp_int pmin = 1;
+        pmin <<= 1023;
+        pmin -= 1;
+        std::cout << pmin << '\n';
 
-        long long k = 0;
-        long long r = 0;
-        long long s = 0;
+        mt11213b base_gen(clock());
+        independent_bits_engine<mt11213b, 256, cpp_int> gen256(base_gen);
+        independent_bits_engine<mt11213b, 1024, cpp_int> gen1024(base_gen);
+        cpp_int b = 0;
+        p = 1;
         do
         {
-            k = rand() % (q - 1) + 1;
-            r = basic::powmod(a, k, p) % q;
+            q = gen256();
+            if (miller_rabin_test(q, 25))
+            {
+                b = pmin / q;
+                p += q * (b++);
+                while (!miller_rabin_test(p, 25))
+                {
+                    b++;
+                    p += q;
+                }
+                break;
+            }
+        } while (true);
+        std::cout << "p - " << p << '\n';
+        std::cout << "q - " << q << '\n';
+        b = (p - 1) / q;
+        a = -1;
+        cpp_int g = 0;
+        while (a < 0)
+        {
+            g = gen1024() % (p - 1);
+            a = powm(g, b, p);
+        }
+        std::cout << "a - " << a << ' ' << powm(a, q, p) << '\n';
+        cpp_int h = hashFile(filename, q);
+        cpp_int x = gen256() % q;
+        y = powm(a, x, p);
+        std::cout << "h - " << h << '\n';
+        cpp_int k = 0;
+        cpp_int r = 0;
+        cpp_int s = 0;
+        do
+        {
+            k = gen256() % (q - 1) + 1;
+            r = powm(a, k, p);
+            r = r % q;
             if (r == 0)
             {
                 continue;
@@ -178,30 +238,32 @@ namespace unsign
         return e == h;
     }
 
-    bool gost(const std::string &filename, const long long &p, const long long &q, const long long &a, const long long &y)
+    bool gost(const std::string &filename, const cpp_int &p, const cpp_int &q, const cpp_int &a, const cpp_int &y)
     {
 
         std::stringstream file(readFile("gost.txt"));
-        long long r;
+        cpp_int r;
         file >> r;
-        long long s;
+        cpp_int s;
         file >> s;
         std::cout << "r - " << r << '\n';
         std::cout << "s - " << s << '\n';
-        long long h = hashFile(filename, q);
+        cpp_int h = hashFile(filename, q);
         if ((r <= 0) || (s >= q))
         {
             return false;
         }
 
-        long long h_ = basic::reverse(q, h);
+        cpp_int h_ = boost::integer::mod_inverse(h, q);
 
-        long long u1 = (h_ * s) % q;
-        long long u2 = (h_ * r * -1) % q;
+        cpp_int u1 = (h_ * s) % q;
+        cpp_int u2 = (h_ * r * -1) % q;
         u2 += q;
         std::cout << "u1 - " << u1 << '\n';
         std::cout << "u2 - " << u2 << '\n';
-        long long v = ((basic::powmod(a, u1, p) * basic::powmod(y, u2, p)) % p) % q;
+        cpp_int x1 = powm(a, u1, p);
+        cpp_int x2 = powm(y, u2, p);
+        cpp_int v = (x1 * x2) % p % q;
         return v == r;
     }
 
