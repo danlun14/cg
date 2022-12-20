@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/graphgenerator.dir/graphgenerator/graphgenerator.cpp.o -o /home/danila/std/pi/bin/graphgenerator 

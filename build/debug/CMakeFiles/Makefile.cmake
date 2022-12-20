@@ -16,6 +16,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/danila/std/pi/src/CMakeLists.txt"
   "/home/danila/std/pi/src/basic/CMakeLists.txt"
   "/home/danila/std/pi/src/cipher/CMakeLists.txt"
+  "/home/danila/std/pi/src/graphgenerator/CMakeLists.txt"
   "/home/danila/std/pi/src/lab2/CMakeLists.txt"
   "/home/danila/std/pi/src/lab3/CMakeLists.txt"
   "/home/danila/std/pi/src/lab5/CMakeLists.txt"
@@ -68,6 +69,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/voting/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/lab5/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/rgr/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/graphgenerator/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -84,4 +86,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/voting/CMakeFiles/voting.dir/DependInfo.cmake"
   "src/lab5/CMakeFiles/lab5.dir/DependInfo.cmake"
   "src/rgr/CMakeFiles/rgr.dir/DependInfo.cmake"
+  "src/graphgenerator/CMakeFiles/graphgenerator.dir/DependInfo.cmake"
   )

@@ -272,6 +272,19 @@ rgr/fast:
 	$(MAKE) $(MAKESILENT) -f src/rgr/CMakeFiles/rgr.dir/build.make src/rgr/CMakeFiles/rgr.dir/build
 .PHONY : rgr/fast
 
+#=============================================================================
+# Target rules for targets named graphgenerator
+
+# Build rule for target.
+graphgenerator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 graphgenerator
+.PHONY : graphgenerator
+
+# fast build rule for target.
+graphgenerator/fast:
+	$(MAKE) $(MAKESILENT) -f src/graphgenerator/CMakeFiles/graphgenerator.dir/build.make src/graphgenerator/CMakeFiles/graphgenerator.dir/build
+.PHONY : graphgenerator/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -283,6 +296,7 @@ help:
 	@echo "... BigInt"
 	@echo "... basic"
 	@echo "... cipher"
+	@echo "... graphgenerator"
 	@echo "... lab2"
 	@echo "... lab3"
 	@echo "... lab5"

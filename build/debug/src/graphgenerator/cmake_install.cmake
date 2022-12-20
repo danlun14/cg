@@ -1,4 +1,4 @@
-# Install script for directory: /home/danila/std/pi/src
+# Install script for directory: /home/danila/std/pi/src/graphgenerator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,23 +40,5 @@ endif()
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/danila/std/pi/build/debug/src/basic/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/cipher/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/main/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/BigInt/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/lab2/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/lab3/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/sha256/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/sign/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/poker/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/voting/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/lab5/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/rgr/cmake_install.cmake")
-  include("/home/danila/std/pi/build/debug/src/graphgenerator/cmake_install.cmake")
-
 endif()
 

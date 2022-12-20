@@ -38,3 +38,6 @@
 /home/danila/std/pi/build/debug/src/rgr/CMakeFiles/rgr.dir
 /home/danila/std/pi/build/debug/src/rgr/CMakeFiles/edit_cache.dir
 /home/danila/std/pi/build/debug/src/rgr/CMakeFiles/rebuild_cache.dir
+/home/danila/std/pi/build/debug/src/graphgenerator/CMakeFiles/graphgenerator.dir
+/home/danila/std/pi/build/debug/src/graphgenerator/CMakeFiles/edit_cache.dir
+/home/danila/std/pi/build/debug/src/graphgenerator/CMakeFiles/rebuild_cache.dir
