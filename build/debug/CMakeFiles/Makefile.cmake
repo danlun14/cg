@@ -21,6 +21,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/danila/std/pi/src/lab5/CMakeLists.txt"
   "/home/danila/std/pi/src/main/CMakeLists.txt"
   "/home/danila/std/pi/src/poker/CMakeLists.txt"
+  "/home/danila/std/pi/src/rgr/CMakeLists.txt"
   "/home/danila/std/pi/src/sha256/CMakeLists.txt"
   "/home/danila/std/pi/src/sign/CMakeLists.txt"
   "/home/danila/std/pi/src/voting/CMakeLists.txt"
@@ -66,6 +67,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/poker/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/voting/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/lab5/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/rgr/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -81,4 +83,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/poker/CMakeFiles/poker.dir/DependInfo.cmake"
   "src/voting/CMakeFiles/voting.dir/DependInfo.cmake"
   "src/lab5/CMakeFiles/lab5.dir/DependInfo.cmake"
+  "src/rgr/CMakeFiles/rgr.dir/DependInfo.cmake"
   )

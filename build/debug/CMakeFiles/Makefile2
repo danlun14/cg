@@ -89,6 +89,7 @@ src/all: src/sign/all
 src/all: src/poker/all
 src/all: src/voting/all
 src/all: src/lab5/all
+src/all: src/rgr/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -103,6 +104,7 @@ src/preinstall: src/sign/preinstall
 src/preinstall: src/poker/preinstall
 src/preinstall: src/voting/preinstall
 src/preinstall: src/lab5/preinstall
+src/preinstall: src/rgr/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -117,6 +119,7 @@ src/clean: src/sign/clean
 src/clean: src/poker/clean
 src/clean: src/voting/clean
 src/clean: src/lab5/clean
+src/clean: src/rgr/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -238,6 +241,21 @@ src/poker/preinstall:
 # Recursive "clean" directory target.
 src/poker/clean: src/poker/CMakeFiles/poker.dir/clean
 .PHONY : src/poker/clean
+
+#=============================================================================
+# Directory level rules for directory src/rgr
+
+# Recursive "all" directory target.
+src/rgr/all: src/rgr/CMakeFiles/rgr.dir/all
+.PHONY : src/rgr/all
+
+# Recursive "preinstall" directory target.
+src/rgr/preinstall:
+.PHONY : src/rgr/preinstall
+
+# Recursive "clean" directory target.
+src/rgr/clean: src/rgr/CMakeFiles/rgr.dir/clean
+.PHONY : src/rgr/clean
 
 #=============================================================================
 # Directory level rules for directory src/sha256
@@ -455,7 +473,7 @@ src/lab3/CMakeFiles/lab3.dir/clean:
 src/sha256/CMakeFiles/sha256.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/sha256/CMakeFiles/sha256.dir/build.make src/sha256/CMakeFiles/sha256.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=17,18 "Built target sha256"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=19,20 "Built target sha256"
 .PHONY : src/sha256/CMakeFiles/sha256.dir/all
 
 # Build rule for subdir invocation for target.
@@ -484,7 +502,7 @@ src/sign/CMakeFiles/sign.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
 src/sign/CMakeFiles/sign.dir/all: src/sha256/CMakeFiles/sha256.dir/all
 	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/sign/CMakeFiles/sign.dir/build.make src/sign/CMakeFiles/sign.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=19,20 "Built target sign"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=21,22 "Built target sign"
 .PHONY : src/sign/CMakeFiles/sign.dir/all
 
 # Build rule for subdir invocation for target.
@@ -538,7 +556,7 @@ src/poker/CMakeFiles/poker.dir/clean:
 src/voting/CMakeFiles/voting.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/voting/CMakeFiles/voting.dir/build.make src/voting/CMakeFiles/voting.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/voting/CMakeFiles/voting.dir/build.make src/voting/CMakeFiles/voting.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=21,22 "Built target voting"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=23,24 "Built target voting"
 .PHONY : src/voting/CMakeFiles/voting.dir/all
 
 # Build rule for subdir invocation for target.
@@ -582,6 +600,34 @@ lab5: src/lab5/CMakeFiles/lab5.dir/rule
 src/lab5/CMakeFiles/lab5.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/lab5/CMakeFiles/lab5.dir/build.make src/lab5/CMakeFiles/lab5.dir/clean
 .PHONY : src/lab5/CMakeFiles/lab5.dir/clean
+
+#=============================================================================
+# Target rules for target src/rgr/CMakeFiles/rgr.dir
+
+# All Build rule for target.
+src/rgr/CMakeFiles/rgr.dir/all: src/basic/CMakeFiles/basic.dir/all
+src/rgr/CMakeFiles/rgr.dir/all: src/cipher/CMakeFiles/cipher.dir/all
+src/rgr/CMakeFiles/rgr.dir/all: src/BigInt/CMakeFiles/BigInt.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rgr/CMakeFiles/rgr.dir/build.make src/rgr/CMakeFiles/rgr.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rgr/CMakeFiles/rgr.dir/build.make src/rgr/CMakeFiles/rgr.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/danila/std/pi/build/debug/CMakeFiles --progress-num=17,18 "Built target rgr"
+.PHONY : src/rgr/CMakeFiles/rgr.dir/all
+
+# Build rule for subdir invocation for target.
+src/rgr/CMakeFiles/rgr.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rgr/CMakeFiles/rgr.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/danila/std/pi/build/debug/CMakeFiles 0
+.PHONY : src/rgr/CMakeFiles/rgr.dir/rule
+
+# Convenience name for target.
+rgr: src/rgr/CMakeFiles/rgr.dir/rule
+.PHONY : rgr
+
+# clean rule for target.
+src/rgr/CMakeFiles/rgr.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rgr/CMakeFiles/rgr.dir/build.make src/rgr/CMakeFiles/rgr.dir/clean
+.PHONY : src/rgr/CMakeFiles/rgr.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

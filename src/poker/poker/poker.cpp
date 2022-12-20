@@ -85,7 +85,18 @@ int main()
     }
     std::cout << "table:\n";
     for (int i = 0; i < 5; i++)
-    {
+    {   // 2 6 1 4 7 3 5
+        // 5->3
+        //  2 6 1 4 7 3
+        //  3-> 7
+        //  2 6 1 4 7
+        // 74
+        // 41
+        // 16
+        // 62
+        // 25
+        // 10- 7
+
         auto &item = *(deck.end() - 1);
         deck.erase(deck.end() - 1);
         ccards -= 1;

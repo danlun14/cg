@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/rgr.dir/rgr/rgr.cpp.o -o /home/danila/std/pi/bin/rgr  ../basic/libbasic.a ../cipher/libcipher.a ../basic/libbasic.a ../BigInt/libBigInt.a 

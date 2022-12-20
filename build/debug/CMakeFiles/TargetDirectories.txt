@@ -35,3 +35,6 @@
 /home/danila/std/pi/build/debug/src/lab5/CMakeFiles/lab5.dir
 /home/danila/std/pi/build/debug/src/lab5/CMakeFiles/edit_cache.dir
 /home/danila/std/pi/build/debug/src/lab5/CMakeFiles/rebuild_cache.dir
+/home/danila/std/pi/build/debug/src/rgr/CMakeFiles/rgr.dir
+/home/danila/std/pi/build/debug/src/rgr/CMakeFiles/edit_cache.dir
+/home/danila/std/pi/build/debug/src/rgr/CMakeFiles/rebuild_cache.dir

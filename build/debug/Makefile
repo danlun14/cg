@@ -259,6 +259,19 @@ lab5/fast:
 	$(MAKE) $(MAKESILENT) -f src/lab5/CMakeFiles/lab5.dir/build.make src/lab5/CMakeFiles/lab5.dir/build
 .PHONY : lab5/fast
 
+#=============================================================================
+# Target rules for targets named rgr
+
+# Build rule for target.
+rgr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rgr
+.PHONY : rgr
+
+# fast build rule for target.
+rgr/fast:
+	$(MAKE) $(MAKESILENT) -f src/rgr/CMakeFiles/rgr.dir/build.make src/rgr/CMakeFiles/rgr.dir/build
+.PHONY : rgr/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -275,6 +288,7 @@ help:
 	@echo "... lab5"
 	@echo "... main"
 	@echo "... poker"
+	@echo "... rgr"
 	@echo "... sha256"
 	@echo "... sign"
 	@echo "... voting"
