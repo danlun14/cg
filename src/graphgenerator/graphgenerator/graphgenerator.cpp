@@ -32,6 +32,7 @@ int main()
         filecycle << v.at(i) << ' ';
         filegraph << v.at(i) << ' ' << v.at(i + 1) << '\n';
     }
+    filecycle << v.at(n - 1) << ' ';
     filegraph << v.at(n - 1) << ' ' << v.at(0) << '\n';
     m -= n;
     while (m--)

@@ -14,8 +14,8 @@
 int main()
 {
     std::vector<std::vector<long long>> H, G, F; // without size
-    std::ifstream filegraph("graph.rgr");
-    std::ifstream filecycle("cycle.rgr");
+    std::ifstream filegraph("graph.rgr");        // граф
+    std::ifstream filecycle("cycle.rgr");        // цикл
     std::vector<int> cycle;
     std::ofstream out("out.txt"); // откроем файл для вывод
     std::streambuf *coutbuf = std::cout.rdbuf();
@@ -23,7 +23,7 @@ int main()
     filegraph >> n >> m;
     if (n > 5)
     {
-        std::cout.rdbuf(out.rdbuf());
+        std::cout.rdbuf(out.rdbuf()); // перенаправляем вывод в файл если большой граф
     }
     for (int i = 0; i < n; i++)
     {
@@ -52,21 +52,15 @@ int main()
     while (m-- > 0)
     {
         filegraph >> i_ >> j_;
-        G[i_][j_] = 1;
-        // G[j_][i_] = 1;
+        G[i_][j_] = 1; // заполняем граф
     }
-    for (int j = 0; j < n; j++)
-    {
-        // std::cout << cycle[j] << ' ';
-    }
-    // std::cout << '\n';
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            // std::cout << G[i][j] << ' ';
+            std::cout << G[i][j] << ' ';
         }
-        // std::cout << '\n';
+        std::cout << '\n';
     }
     std::vector<int> GtoH;
     GtoH.reserve(n);
@@ -79,53 +73,33 @@ int main()
         }
         std::random_device rd;
         std::mt19937 g(rd());
-        std::shuffle(GtoH.begin(), GtoH.end(), g);
+        std::shuffle(GtoH.begin(), GtoH.end(), g); // перемешиваем индексы
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
                 auto addingval = ((rd() % N) >> 1) << 1;
-                H[GtoH[i]][GtoH[j]] = G[i][j] + addingval;
+                H[GtoH[i]][GtoH[j]] = G[i][j] + addingval; // добавляем значение, у которого крайний правый бит равен 0
             }
-        }
-        for (int i = 0; i < n; i++)
-        {
-            // std::cout << GtoH[i] << ' ';
-            for (int j = 0; j < n; j++)
-            {
-                // std::cout << H[i][j] << ' ';
-            }
-            // std::cout << '\n';
         }
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
 
-                F[i][j] = cipher::encode::RSA(H[i][j], D, N);
+                F[i][j] = cipher::encode::RSA(H[i][j], D, N); // шифруем
             }
-        }
-        for (int i = 0; i < n; i++)
-        {
-            // std::cout << GtoH[i] << ' ';
-            for (int j = 0; j < n; j++)
-            {
-                //  std::cout << F[i][j] << ' ';
-            }
-            //    std::cout << '\n';
         }
         int ans = 0;
         std::cout << " Choose question \n";
         std::cin >> ans;
         if (ans == 1)
         {
+
             std::cout << "\n cycle:\n";
             for (int i = 0; i < n - 1; i++)
             {
-                i_ = i;
-                j_ = i + 1;
-
-                F[GtoH[cycle[i]]][GtoH[cycle[i + 1]]] = (cipher::decode::RSA(F[GtoH[cycle[i]]][GtoH[cycle[i + 1]]], C, N) & 1);
+                F[GtoH[cycle[i]]][GtoH[cycle[i + 1]]] = (cipher::decode::RSA(F[GtoH[cycle[i]]][GtoH[cycle[i + 1]]], C, N) & 1); // расшифровывем цикл
             }
             F[GtoH[cycle[n - 1]]][GtoH[cycle[0]]] = (cipher::decode::RSA(F[GtoH[cycle[n - 1]]][GtoH[cycle[0]]], C, N) & 1);
             for (int i = 0; i < n; i++)
@@ -143,7 +117,7 @@ int main()
             {
                 for (int j = 0; j < n; j++)
                 {
-                    F[GtoH[cycle[i]]][GtoH[cycle[j]]] = cipher::decode::RSA(F[GtoH[cycle[i]]][GtoH[cycle[j]]], C, N);
+                    F[GtoH[cycle[i]]][GtoH[cycle[j]]] = cipher::decode::RSA(F[GtoH[cycle[i]]][GtoH[cycle[j]]], C, N); // расшифровываем полностью
                 }
             }
 
